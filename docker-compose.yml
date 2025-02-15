@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  processar-mensagem-sqs:
+    build: .
+    environment:
+      - AWS_PROFILE=user-mensageria
+    volumes:
+      - ~/.aws:/root/.aws
+    command: ["./processar-mensagem-sqs.sh"]

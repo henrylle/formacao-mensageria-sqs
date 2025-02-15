@@ -1,8 +1,9 @@
 #!/bin/bash
 
 # Substitua pela URL da sua fila SQS
-SQS_QUEUE_URL="https://sqs.us-east-1.amazonaws.com/194722436911/formacao-mensageria.fifo"
+SQS_QUEUE_URL="https://sqs.us-east-1.amazonaws.com/194722436911/formacao-mensageria"
 
+echo "Processando mensagem da fila: $SQS_QUEUE_URL"
 # Lê a mensagem da fila
 response=$(aws sqs receive-message --queue-url "$SQS_QUEUE_URL" --max-number-of-messages 1 --wait-time-seconds 15 --profile user-mensageria)
 

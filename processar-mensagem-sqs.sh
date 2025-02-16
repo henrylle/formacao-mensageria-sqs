@@ -5,7 +5,7 @@ SQS_QUEUE_URL="https://sqs.us-east-1.amazonaws.com/194722436911/formacao-mensage
 
 echo "Processando mensagem da fila: $SQS_QUEUE_URL"
 # Lê a mensagem da fila
-response=$(aws sqs receive-message --queue-url "$SQS_QUEUE_URL" --max-number-of-messages 1 --wait-time-seconds 15 --profile user-mensageria)
+response=$(aws sqs receive-message --queue-url "$SQS_QUEUE_URL" --max-number-of-messages 1 --wait-time-seconds 20)
 
 # Verifica se o response não está vazio e é um JSON válido
 if [[ -n "$response" && "$response" == *"Messages"* ]]; then
@@ -24,7 +24,7 @@ if [[ -n "$response" && "$response" == *"Messages"* ]]; then
     echo "Mensagem processada com sucesso!"
 
     # Exclui a mensagem da fila
-    aws sqs delete-message --queue-url "$SQS_QUEUE_URL" --receipt-handle "$receipt_handle" --profile user-mensageria
+    aws sqs delete-message --queue-url "$SQS_QUEUE_URL" --receipt-handle "$receipt_handle"
     echo "Mensagem removida da fila."
 else
     echo "Nenhuma mensagem encontrada na fila ou resposta inválida."

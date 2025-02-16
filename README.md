@@ -1,4 +1,5 @@
-# Alguns Scripts do modulo mensageria com SQS da Formação AWS
+# Scripts do Módulo de Mensageria com SQS | Formação AWS
 
+## Veja mais sobre a Formação AWS:
 
-Link da Formação AWS (https://inscricao.formacaoaws.com.br)
+🔗 [Acesse a Formação AWS](https://inscricao.formacaoaws.com.br)

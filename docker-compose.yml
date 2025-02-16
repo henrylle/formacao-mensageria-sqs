@@ -1,10 +1,10 @@
-version: '3.8'
-
 services:
   processar-mensagem-sqs:
     build: .
     environment:
       - AWS_PROFILE=user-mensageria
+      - BODY=body-de-exemplo
+      - RECEIPT_HANDLE=receipt-handle-de-exemplo
+      - SQS_QUEUE_URL=SUA_FILA
     volumes:
       - ~/.aws:/root/.aws
-    command: ["./processar-mensagem-sqs.sh"]
